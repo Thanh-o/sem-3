@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Report</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px; 
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient Report</h1>
+
+    <h2>Today's Appointments</h2>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Patient Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Doctor Name</th>
+            <th>Reason</th>
+            <th>Date</th>
+        </tr>
+        {% for data in report_data %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ data.patient_name }}</td>
+            <td>{{ data.date_of_birth }}</td>
+            <td>{{ data.gender }}</td>
+            <td>{{ data.address }}</td>
+            <td>{{ data.doctor_name }}</td>
+            <td>{{ data.reason }}</td>
+            <td>{{ data.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>All Appointments Today</h2>
+    <table>
+        <tr>
+            <th>Address</th>
+            <th>No</th>
+            <th>Patient Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Doctor Name</th>
+            <th>Status</th>
+            <th>Note</th>
+        </tr>
+        {% for data in report_data %}
+        <tr>
+            <td>{{ data.address }}</td>
+            <td>{{ loop.index }}</td>
+            <td>{{ data.patient_name }}</td>
+            <td>{{ data.date_of_birth }}</td>
+            <td>{{ data.gender }}</td>
+            <td>{{ data.doctor_name }}</td>
+            <td>{{ data.status }}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

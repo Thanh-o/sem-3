@@ -1,0 +1,21 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Home</title>  
+</head>  
+<body>  
+    <h1>Welcome to the Health Management System</h1>  
+    <nav>  
+        <ul>  
+            <li><a href="{{ url_for('add_patient') }}">Add Patient</a></li>  
+            <li><a href="{{ url_for('add_doctor') }}">Add Doctor</a></li>  
+            <li><a href="{{ url_for('add_appointment') }}">Add Appointment</a></li>  
+            <li><a href="{{ url_for('report') }}">View Report</a></li>  
+        </ul>  
+    </nav>  
+
+    <h2>Existing Data</h2>  
+    <p>Check the reports to view existing patients, doctors, and appointments.</p>  
+</body>  
+</html>

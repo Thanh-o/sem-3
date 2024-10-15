@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Add Appointment</title>  
+</head>  
+<body>  
+    <h1>Add Appointment</h1>  
+    <form action="/add_appointment" method="POST">  
+        <label for="patient_full_name">Patient Full Name:</label><br>  
+        <input type="text" id="patient_full_name" name="patient_full_name" required><br>  
+
+        <label for="doctor_full_name">Doctor Full Name:</label><br>  
+        <input type="text" id="doctor_full_name" name="doctor_full_name" required><br>  
+        
+        <label for="appointment_date">Appointment Date:</label><br>  
+        <input type="date" id="appointment_date" name="appointment_date" required><br>  
+
+        <label for="reason">Reason:</label><br>  
+        <textarea id="reason" name="reason" required></textarea><br>  
+
+        <label for="status">Status:</label><br>  
+        <select id="status" name="status" required>  
+            
+            <option value="Done">Done</option>  
+            <option value="Pending">Pending</option>  
+        </select>  
+
+        <input type="submit" value="Add Appointment">  
+    </form>  
+</body>  
+</html>
