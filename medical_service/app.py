@@ -29,6 +29,7 @@ def add_patient():
             "address": address  
         }  
         db.patients.insert_one(patient)  
+        print(f"Added patient: {patient}")  # In thông tin bệnh nhân đã thêm
         return redirect(url_for('home'))  
 
     return render_template('add_patient.html')  
@@ -49,8 +50,9 @@ def add_doctor():
             "email": email  
         }  
         db.doctors.insert_one(doctor)  
+        print(f"Added doctor: {doctor}")  # In thông tin bác sĩ đã thêm
         return redirect(url_for('home'))  
-    
+        
     return render_template('add_doctor.html')  
 
 @app.route('/add_appointment', methods=['GET', 'POST'])  
@@ -76,6 +78,7 @@ def add_appointment():
                 "status": status  
             }  
             db.appointments.insert_one(appointment)  
+            print(f"Added appointment: {appointment}")  # In thông tin cuộc hẹn đã thêm
             return redirect(url_for('home'))  
         else:  
             return "Could not find patient or doctor."  
@@ -118,6 +121,7 @@ def report():
             "reason": appointment['reason'],  
             "date": appointment['appointment_date']  
         })  
+    print(f"Generated report data: {report_data}")  # In dữ liệu báo cáo đã tạo
 
     return render_template('report.html', report_data=report_data)  
 
